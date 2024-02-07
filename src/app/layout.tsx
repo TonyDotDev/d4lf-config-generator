@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import { NavigationProgress } from "@mantine/nprogress";
 
+import PageWrapper from "./components/pageWrapper";
+
 // Import styles of packages that you've installed.
 // All packages except `@mantine/hooks` require styles imports
 import "@mantine/core/styles.css";
@@ -26,8 +28,11 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className={inter.className}>
-        <MantineProvider>
-          <NavigationProgress /> {children}
+        <MantineProvider
+          theme={{ primaryColor: "red" }}
+          defaultColorScheme="dark"
+        >
+          <NavigationProgress /> <PageWrapper>{children}</PageWrapper>
         </MantineProvider>
       </body>
     </html>

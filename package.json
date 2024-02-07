@@ -22,7 +22,8 @@
     "next": "14.1.0",
     "postcss-preset-mantine": "^1.13.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "tabler-icons-react": "^1.56.0"
   },
   "devDependencies": {
     "@types/node": "^20",
