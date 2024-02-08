@@ -8,6 +8,7 @@ import {
   Avatar,
   Box,
   Button,
+  Image,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { usePathname } from "next/navigation";
@@ -51,7 +52,7 @@ export default function PageWrapper({ children }: PageWrapperProps) {
         >
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           <Anchor href="/" component={Link}>
-            D4LF Config Generator
+            <Avatar radius="sm" src="/images/d4-demon.png" alt="demon" />
           </Anchor>
         </Box>
 
