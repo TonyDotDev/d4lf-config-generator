@@ -1,6 +1,14 @@
 "use client";
 import { ReactNode } from "react";
-import { Anchor, AppShell, Burger, NavLink } from "@mantine/core";
+import {
+  Anchor,
+  AppShell,
+  Burger,
+  NavLink,
+  Avatar,
+  Box,
+  Button,
+} from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { usePathname } from "next/navigation";
 import { getNavbarItems } from "./helpers";
@@ -19,11 +27,11 @@ export default function PageWrapper({ children }: PageWrapperProps) {
   return (
     <AppShell
       header={{ height: 60 }}
-      navbar={{
-        width: 300,
-        breakpoint: "sm",
-        collapsed: { mobile: !opened },
-      }}
+      // navbar={{
+      //   width: 300,
+      //   breakpoint: "sm",
+      //   collapsed: { mobile: !opened },
+      // }}
       padding="md"
     >
       <AppShell.Header
@@ -31,32 +39,55 @@ export default function PageWrapper({ children }: PageWrapperProps) {
           padding: "8px 14px",
           display: "flex",
           alignItems: "center",
-          gap: 8,
+          justifyContent: "space-between",
         }}
       >
-        <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-        <Anchor href="/" component={Link}>
-          D4LF Config Generator
-        </Anchor>
+        <Box
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+          }}
+        >
+          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+          <Anchor href="/" component={Link}>
+            D4LF Config Generator
+          </Anchor>
+        </Box>
+
+        <Box
+          style={{
+            display: "flex",
+            gap: 8,
+          }}
+        >
+          <Button>Sign Up</Button>
+          <Button variant="outline">Login</Button>
+        </Box>
+        {/* <Box>
+          <Avatar color="cyan" radius="xl">
+            TP
+          </Avatar>
+        </Box> */}
       </AppShell.Header>
 
-      <AppShell.Navbar p="md">
-        {navbarItems.map(({ href, label, leftSection }) => {
+      {/* <AppShell.Navbar p="md">
+        {navbarItems.map((navbarItem) => {
           return (
-            <AppShell.Section key={href}>
+            <AppShell.Section key={navbarItem.href}>
               <NavLink
                 style={{ borderRadius: 4 }}
-                href={href}
-                label={label}
-                leftSection={leftSection}
-                active={href === pathname}
+                href={navbarItem.href}
+                label={navbarItem.label}
+                leftSection={navbarItem.leftSection}
+                active={navbarItem.href === pathname}
                 variant="filled"
                 component={Link}
               />
             </AppShell.Section>
           );
         })}
-      </AppShell.Navbar>
+      </AppShell.Navbar> */}
 
       <AppShell.Main>{children}</AppShell.Main>
     </AppShell>

@@ -1,4 +1,4 @@
-import { Home2, Article } from "tabler-icons-react";
+import { Home2, Settings2, Filter } from "tabler-icons-react";
 
 export const getNavbarItems = () => {
   return [
@@ -8,9 +8,14 @@ export const getNavbarItems = () => {
       leftSection: <Home2 size="1rem" />,
     },
     {
-      label: "Generate Config",
-      href: "/generate",
-      leftSection: <Article size="1rem" />,
+      label: "Loot Filter Profiles",
+      href: "/lootFilterProfiles",
+      leftSection: <Filter size="1rem" />,
+    },
+    {
+      label: "Param Files",
+      href: "/paramsFiles",
+      leftSection: <Settings2 size="1rem" />,
     },
   ];
 };
