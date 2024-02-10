@@ -59,7 +59,7 @@ export default function Home() {
         </Group>
       </Modal>{" "}
       <Center component="main">
-        <Stack gap={20} maw={700}>
+        <Stack gap={20} maw={1000} w="100%">
           <Title order={1}>Welcome to the D4LF Config Generator!</Title>
           <Text>
             This is a tool to help you generate loot filter profiles and params
