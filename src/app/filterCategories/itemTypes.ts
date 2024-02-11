@@ -28,8 +28,6 @@ export const itemTypes = {
   wand: "wand",
 };
 
-type ItemType = keyof typeof itemTypes;
-
 export const getItemTypeOptions = () => {
   return map(itemTypes, (label, value) => {
     return { value, label: startCase(label) };

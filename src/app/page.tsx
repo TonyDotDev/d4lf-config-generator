@@ -16,6 +16,7 @@ import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import { Plus } from "tabler-icons-react";
 import { getSelectLootFilterProfileCards } from "./helpers";
+import { getAspectOptions } from "@/app/components/Inputs/AspectSelector/helpers";
 
 export default function Home() {
   const [opened, { open, close }] = useDisclosure(false);
@@ -25,6 +26,9 @@ export default function Home() {
   };
 
   const selectLootFilterProfileCards = getSelectLootFilterProfileCards();
+
+  const aspectOptions = getAspectOptions();
+  console.log(aspectOptions);
 
   return (
     <>
